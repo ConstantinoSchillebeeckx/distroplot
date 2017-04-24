@@ -30,10 +30,11 @@ function makeDistroChart(settings) {
         yName: null,
         selector: null,
         axisLables: null,
+        title: null,
         yTicks: 1,
         scale: 'linear',
         chartSize: {width: getParentWidth(settings), height: getParentHeight(settings)},
-        margin: {top: 15, right: 60, bottom: 40, left: 50},
+        margin: {top: settings.title ? 50 : 15, right: 60, bottom: 40, left: 50},
         constrainExtremes: false,
         color: d3.scale.category10()
     };
@@ -253,6 +254,7 @@ function makeDistroChart(settings) {
         chart.divHeight = chart.settings.chartSize.height;
         chart.width = chart.divWidth - chart.margin.left - chart.margin.right;
         chart.height = chart.divHeight - chart.margin.top - chart.margin.bottom;
+        chart.title = chart.settings.title;
 
         if (chart.settings.axisLabels) {
             chart.xAxisLable = chart.settings.axisLabels.xAxis;
@@ -339,7 +341,7 @@ function makeDistroChart(settings) {
     !function prepareChart() {
         // Build main div and chart div
         chart.objs.mainDiv = d3.select(chart.settings.selector)
-            .style("max-width", chart.divWidth + "px");
+
         // Add all the divs to make it centered and responsive
         chart.objs.mainDiv.append("div")
             .attr("class", "inner-wrapper")
@@ -358,6 +360,14 @@ function makeDistroChart(settings) {
             .attr("height", chart.height + (chart.margin.top + chart.margin.bottom))
             .append("g")
             .attr("transform", "translate(" + chart.margin.left + "," + chart.margin.top + ")");
+
+        // Create title
+        chart.objs.title = chart.objs.g.append("text")
+            .attr("class", "chart-title")
+            .attr("x", (chart.width/2))
+            .attr("y", -(chart.margin.top / 2))
+            .attr("text-anchor", "middle")
+            .text(chart.title);
 
         // Create axes
         chart.objs.axes = chart.objs.g.append("g").attr("class", "axis");

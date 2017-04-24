@@ -42,7 +42,10 @@
     stroke-dasharray: 2,1;
     stroke-width: 1;
     shape-rendering: crispEdges;
+}
 
+.chart-wrapper .chart-title {
+    font-size: 16px;
 }
 
 .chart-wrapper .x.axis .domain {
