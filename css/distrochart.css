@@ -2,10 +2,9 @@
 
 /*Nested divs for responsiveness*/
 .chart-wrapper {
-    max-width: 800px;  /*Overwritten by the JS*/
-    min-width: 304px;
+    max-height: 500px;
     margin-bottom: 8px;
-    background-color: #FAF7F7;
+    /* background-color: #FAF7F7; */
 }
 .chart-wrapper .inner-wrapper {
     position: relative;
