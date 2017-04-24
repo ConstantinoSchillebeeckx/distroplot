@@ -34,13 +34,15 @@ function makeDistroChart(settings) {
         yTicks: 1,
         scale: 'linear',
         chartSize: {width: getParentWidth(settings), height: getParentHeight(settings)},
-        margin: {top: settings.title ? 50 : 15, right: 60, bottom: 40, left: 50},
+        margin: {top: 15, right: 60, bottom: 40, left: 50},
         constrainExtremes: false,
         color: d3.scale.category10()
     };
     for (var setting in settings) {
         chart.settings[setting] = settings[setting]
     }
+
+    if (chart.settings.title) chart.settings['margin']['top'] += 35;
 
     function getParentWidth(settings) {
         var sel = settings.selector;
