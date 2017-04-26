@@ -3,7 +3,6 @@
 /*Nested divs for responsiveness*/
 .chart-wrapper {
     max-height: 500px;
-    margin-bottom: 8px;
     /* background-color: #FAF7F7; */
 }
 .chart-wrapper .inner-wrapper {

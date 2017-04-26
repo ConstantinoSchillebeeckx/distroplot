@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/distrochart.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-<div class="chart-wrapper" id="chart-distro1"></div>
 
 <!--Sorry about all the inline JS. It is a quick way to show what options are available-->
 <div class="chart-options">
@@ -22,6 +22,7 @@
     <button onclick="if(chart1.dataPlots.options.showLines){chart1.dataPlots.change({showLines:false});} else {chart1.dataPlots.change({showLines:['median','quartile1','quartile3']});}">Trend Lines</button>
 </div>
 
+<div class="chart-wrapper" id="chart-distro1"></div>
 
 <script src="js/distrochart.js" charset="utf-8"></script>
 <script type="text/javascript">
