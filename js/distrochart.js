@@ -427,7 +427,7 @@ function makeDistroChart(settings) {
             show: true,
             showViolinPlot: true,
             resolution: 100,
-            bandwidth: 20,
+            bandwidth: 2,
             width: 50,
             interpolation: 'cardinal',
             clamp: 1,
@@ -678,7 +678,6 @@ function makeDistroChart(settings) {
             }
 
         };
-
 
         function kernelDensityEstimator(kernel, x) {
             return function (sample) {
