@@ -1514,7 +1514,7 @@ function makeDistroChart(settings) {
                         .attr("class", "line " + cMetric)
                         .attr("data-metric", cMetric)
                         .style("fill", 'none')
-                        .style("stroke", chart.colorFunct(cMetric));
+                        .style("stroke", chart.dataPlots.colorFunct(cMetric));
                 }
 
             }
