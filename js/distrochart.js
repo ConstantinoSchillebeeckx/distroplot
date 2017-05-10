@@ -1486,6 +1486,13 @@ function makeDistroChart(settings) {
                 chart.dataPlots.colorFunct = chart.colorFunct
             }
 
+    
+            if (dOpts && dOpts.lineColors) {
+                chart.dataPlots.colorFunctLine = getColorFunct(dOpts.lineColors);
+            } else {
+                chart.dataPlots.colorFunctLine = chart.colorFunct
+            }
+
             if (dOpts.show == false) {
                 return
             }
@@ -1514,7 +1521,7 @@ function makeDistroChart(settings) {
                         .attr("class", "line " + cMetric)
                         .attr("data-metric", cMetric)
                         .style("fill", 'none')
-                        .style("stroke", chart.dataPlots.colorFunct(cMetric));
+                        .style("stroke", chart.dataPlots.colorFunctLine(cMetric));
                 }
 
             }
