@@ -329,6 +329,9 @@ function makeDistroChart(settings) {
             .attr("x", -5)
             .attr("transform", "rotate(-45)")
             .style("text-anchor", "end");
+        chart.objs.g.select('.x.axis').selectAll("text.label")
+            .attr("transform", "rotate(0)")
+            .attr("y", 42)
         chart.objs.g.select('.x.axis .label').attr("x", chart.width / 2);
         chart.objs.g.select('.y.axis').call(chart.objs.yAxis.innerTickSize(-chart.width));
         chart.objs.g.select('.y.axis .label').attr("x", -chart.height / 2);
@@ -376,7 +379,11 @@ function makeDistroChart(settings) {
         chart.objs.axes.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + chart.height + ")")
-            .call(chart.objs.xAxis);
+            .call(chart.objs.xAxis)
+            .append("text")
+            .attr("class", "label")
+            .style("text-anchor", "middle")
+            .text(chart.xAxisLable);
         chart.objs.axes.append("g")
             .attr("class", "y axis")
             .call(chart.objs.yAxis)
