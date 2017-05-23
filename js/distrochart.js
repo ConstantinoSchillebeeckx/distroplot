@@ -325,12 +325,10 @@ function makeDistroChart(settings) {
         //Update axes
         chart.objs.g.select('.x.axis').attr("transform", "translate(0," + chart.height + ")").call(chart.objs.xAxis)
             .selectAll("text")
-            .attr("y", 5)
-            .attr("x", -5)
-            .attr("transform", "rotate(-45)")
-            .style("text-anchor", "end");
+            .attr("y", 10)
+            .attr("x", 0)
+            .style("text-anchor", "middle");
         chart.objs.g.select('.x.axis').selectAll("text.label")
-            .attr("transform", "rotate(0)")
             .attr("y", 42)
         chart.objs.g.select('.x.axis .label').attr("x", chart.width / 2);
         chart.objs.g.select('.y.axis').call(chart.objs.yAxis.innerTickSize(-chart.width));
