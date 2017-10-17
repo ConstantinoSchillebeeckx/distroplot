@@ -1,3 +1,7 @@
+**NOTE:** this plot type has been implemented in the [NVD3 library](http://nvd3.org/) as the [distroPlotChart](https://github.com/ConstantinoSchillebeeckx/nvd3/blob/master/examples/distroPlotChart.html)
+
+---
+
 # distroplot
 D3 violin, box and swarm plots
 
